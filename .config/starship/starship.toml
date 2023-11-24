@@ -23,7 +23,7 @@ disabled = true
 [username]
 style_user = "#A8D8EA bold"
 format = "[ $user]($style) in "
-disabled = false
+disabled = true
 show_always = true
 
 [git_branch]
