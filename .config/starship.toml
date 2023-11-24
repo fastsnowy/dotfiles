@@ -17,6 +17,9 @@ disabled = true
 [docker_context]
 format = "via [🐋 $context](blue bold)"
 
+[gcloud]
+disabled = true
+
 [username]
 style_user = "#A8D8EA bold"
 format = "[ $user]($style) in "
