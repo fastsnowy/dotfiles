@@ -68,9 +68,9 @@ function symbolic_links {
     
     # symbolic links
     echo -e "\e[36mCreate symbolic links\e[m\n"
-    ln -sf ~/.config/zsh/.zshrc ~/.zshrc
-    ln -sf ~/.config/starship/starship.toml ~/.config/starship.toml
-    ln -sf ~/.config/sheldon/plugins.toml ~/.config/plugins.toml
+    ln -sf ~/dotfiles/.config/zsh/.zshrc ~/.zshrc
+    ln -sf ~/dotfiles/.config/starship/starship.toml ~/.config/starship.toml
+    ln -sf ~/dotfiles/.config/sheldon/plugins.toml ~/.config/sheldon/plugins.toml
     echo -e "\e[36mCreate symbolic links done\e[m\n"
 }
 

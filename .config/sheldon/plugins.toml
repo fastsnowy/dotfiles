@@ -12,6 +12,10 @@
 # See the documentation for more https://github.com/rossmacarthur/sheldon#readme
 
 shell = 'zsh'
+apply = ['defer']
+
+[templates]
+defer = ""
 
 [plugins]
 
