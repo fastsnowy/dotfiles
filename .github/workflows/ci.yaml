@@ -1,0 +1,30 @@
+name: Setup-CI
+
+on: [push]
+
+jobs:
+  ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install dependencies
+        run: |
+          apt install -y libssl-dev build-essential git
+      - name: Install zsh
+        run: |
+          apt install -y zsh --no-install-recommends
+      - name: test setup
+        run: zsh ./setup.sh
+  
+  macos:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Homebrew
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      - name: Install dependencies
+        run: |
+          brew install zsh
+      - name: test setup
+        run: zsh ./setup.sh
