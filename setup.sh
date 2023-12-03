@@ -6,6 +6,13 @@ function install_cargo {
     fi
 }
 
+function install_sheldon {
+    if ! command -v sheldon >/dev/null 2>&1; then
+        cargo install sheldon
+        echo -e "\e[36mInstalled sheldon\e[m\n"
+    fi
+}
+
 function install_brew {
     if [ -z "$(command -v brew)" ]; then
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -44,11 +51,15 @@ function install_exa {
 
 function installs {
     install_cargo
-    install_brew
+    install_sheldon
     install_starship
     install_rtx
-    install_rye
     install_exa
+}
+
+function extra_installs {
+    install_brew
+    install_rye
 }
 
 # symlink
@@ -70,15 +81,31 @@ function symbolic_links {
     echo -e "\e[36mCreate symbolic links\e[m\n"
     ln -snf $HOME/dotfiles/.config/zsh/.zshrc $HOME/.zshrc
     ln -snf $HOME/dotfiles/.config/zsh/.zshenv $HOME/.zshenv
+    # .configフォルダがない場合は作成
+    if [[ ! -d "$HOME/.config" ]]; then
+        mkdir $HOME/.config/sheldon -p
+    fi
     ln -snf $HOME/dotfiles/.config/starship/starship.toml $HOME/.config/starship.toml
     ln -snf $HOME/dotfiles/.config/sheldon/plugins.toml $HOME/.config/sheldon/plugins.toml
     echo -e "\e[36mCreate symbolic links done\e[m\n"
 }
 
 
+# コマンドライン引数を受け取るmain
 function main {
-    installs
-    symbolic_links
+    if [[ $1 == "-i" ]]; then
+        installs
+    elif [[ $1 == "-s" ]]; then
+        symbolic_links
+    elif [[ $1 == "-e" ]]; then
+        extra_installs
+    elif [[ $1 == "-a" ]]; then
+        installs
+        symbolic_links
+        extra_installs
+    else
+        echo -e "\e[31mInvalid argument\e[m\n"
+    fi
 }
 
-main
+main $1
