@@ -102,7 +102,6 @@ function main {
     elif [[ $1 == "-a" ]]; then
         installs
         symbolic_links
-        extra_installs
     else
         echo -e "\e[31mInvalid argument\e[m\n"
     fi
