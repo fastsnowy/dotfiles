@@ -78,15 +78,16 @@ function symbolic_links {
     echo -e "\e[36mBackup done\e[m\n"
     
     # symbolic links
+    dotfiles_dir="$(cd "$(dirname "$0")" && pwd -P)"
     echo -e "\e[36mCreate symbolic links\e[m\n"
-    ln -snf $HOME/dotfiles/.config/zsh/.zshrc $HOME/.zshrc
-    ln -snf $HOME/dotfiles/.config/zsh/.zshenv $HOME/.zshenv
+    ln -snf $dotfiles_dir/.config/zsh/.zshrc $HOME/.zshrc
+    ln -snf $dotfiles_dir/.config/zsh/.zshenv $HOME/.zshenv
     # .configフォルダがない場合は作成
     if [[ ! -d "$HOME/.config" ]]; then
         mkdir $HOME/.config/sheldon -p
     fi
-    ln -snf $HOME/dotfiles/.config/starship/starship.toml $HOME/.config/starship.toml
-    ln -snf $HOME/dotfiles/.config/sheldon/plugins.toml $HOME/.config/sheldon/plugins.toml
+    ln -snf $dotfiles_dir/.config/starship/starship.toml $HOME/.config/starship.toml
+    ln -snf $dotfiles_dir/.config/sheldon/plugins.toml $HOME/.config/sheldon/plugins.toml
     echo -e "\e[36mCreate symbolic links done\e[m\n"
 }
 
