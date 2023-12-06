@@ -54,12 +54,12 @@ function installs {
     install_sheldon
     install_starship
     install_rtx
+    install_rye
     install_exa
 }
 
 function extra_installs {
     install_brew
-    install_rye
 }
 
 # symlink
@@ -95,6 +95,7 @@ function symbolic_links {
 function main {
     if [[ $1 == "-i" ]]; then
         installs
+        symbolic_links
     elif [[ $1 == "-s" ]]; then
         symbolic_links
     elif [[ $1 == "-e" ]]; then
