@@ -42,10 +42,10 @@ function install_rye {
     fi
 }
 
-function install_exa {
-    if ! command -v exa >/dev/null 2>&1; then
-        cargo install exa
-        echo -e "\e[36mInstalled exa\e[m\n"
+function install_eza {
+    if ! command -v eza >/dev/null 2>&1; then
+        cargo install eza
+        echo -e "\e[36mInstalled eza\e[m\n"
     fi
 }
 
@@ -55,7 +55,7 @@ function installs {
     install_starship
     install_rtx
     install_rye
-    install_exa
+    install_eza
 }
 
 function extra_installs {
