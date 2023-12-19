@@ -1,21 +1,19 @@
-# starshipの設定
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-## 基本
 add_newline = true
 
 [directory]
 truncation_length = 100
 truncate_to_repo = false
 truncation_symbol = "…/"
-style = "#AA96DA bold"
+style = "#7071E8 bold"
 
 [container]
 disabled = true
 
 [docker_context]
-format = "via [🐋 $context](blue bold)"
+format = "via [󰡨 $context](blue bold)"
 
 [gcloud]
 disabled = true
@@ -27,17 +25,19 @@ disabled = true
 show_always = true
 
 [git_branch]
-style = "#FCBAD3"
+style = "#F875AA"
+symbol = " "
+
 [git_status]
-style = "#FCBAD3"
-conflicted = '⚔️'
-ahead = '🏎💨'
-behind = '😰'
-diverged = '😵'
-up_to_date = '✅'
-untracked = '🐾'
-stashed = '📦'
-modified = '🔨'
-staged = '[++\($count\)](green)'
-renamed = '👅'
-deleted = '🗑'
+style = "#F875AA"
+
+[package]
+style = "#E1AEFF"
+symbol = " "
+
+[nodejs]
+style = "#FFBDF7"
+
+[python]
+style = "#FFBDF7"
+symbol = " "
