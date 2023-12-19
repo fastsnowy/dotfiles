@@ -9,13 +9,13 @@ add_newline = true
 truncation_length = 100
 truncate_to_repo = false
 truncation_symbol = "…/"
-style = "#AA96DA bold"
+style = "#392467 bold"
 
 [container]
 disabled = true
 
 [docker_context]
-format = "via [🐋 $context](blue bold)"
+format = "via [󰡨 $context](blue bold)"
 
 [gcloud]
 disabled = true
@@ -27,17 +27,19 @@ disabled = true
 show_always = true
 
 [git_branch]
-style = "#FCBAD3"
+style = "#5D3587"
+symbol = " "
+
 [git_status]
-style = "#FCBAD3"
-conflicted = '⚔️'
-ahead = '🏎💨'
-behind = '😰'
-diverged = '😵'
-up_to_date = '✅'
-untracked = '🐾'
-stashed = '📦'
-modified = '🔨'
-staged = '[++\($count\)](green)'
-renamed = '👅'
-deleted = '🗑'
+style = "#5D3587"
+
+[package]
+style = "#A367B1"
+symbol = " "
+
+[nodejs]
+style = "#FFD1E3"
+
+[python]
+style = "#FFD1E3"
+symbol = " "
