@@ -84,10 +84,16 @@ function symbolic_links {
     ln -snf $dotfiles_dir/.config/zsh/.zshenv $HOME/.zshenv
     # .configフォルダがない場合は作成
     if [[ ! -d "$HOME/.config" ]]; then
-        mkdir $HOME/.config/sheldon -p
+        mkdir -p $HOME/.config/sheldon
+        mkdir -p $HOME/.config/zsh/defer
     fi
     ln -snf $dotfiles_dir/.config/starship/starship.toml $HOME/.config/starship.toml
     ln -snf $dotfiles_dir/.config/sheldon/plugins.toml $HOME/.config/sheldon/plugins.toml
+    # $dotfiles_dir/.config/zsh/defer/以下のファイルを$HOME/.config/zsh/defer/以下にシンボリックリンクを作成
+    for file in $dotfiles_dir/.config/zsh/defer/*; do
+        ln -snf $file $HOME/.config/zsh/defer/$(basename $file)
+    done
+
     echo -e "\e[36mCreate symbolic links done\e[m\n"
 }
 

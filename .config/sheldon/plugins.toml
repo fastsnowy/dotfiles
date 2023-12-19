@@ -55,3 +55,8 @@ inline = 'eval ". $HOME/.rye/env"'
 
 [plugins.auto-cd]
 inline = 'setopt auto_cd'
+
+[plugins.defer-zsh]
+local = '~/.config/zsh'
+use = ['*.zsh']
+apply = ['defer']
