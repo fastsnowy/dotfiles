@@ -29,6 +29,10 @@ defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file 
 github = 'romkatv/zsh-defer'
 apply = ['source']
 
+[plugins.zsh-autocomplete]
+github = 'marlonrichert/zsh-autocomplete'
+apply = ['source']
+
 [plugins.compinit]
 inline = 'autoload -Uz compinit && zsh-defer compinit'
 
