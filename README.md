@@ -7,7 +7,7 @@
 
 ## tools
 - cargo
-- rtx-cli
+- mise (migrate from rtx-cli)
 - rye
 - starship
 - eza

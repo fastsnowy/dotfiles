@@ -51,11 +51,11 @@ apply = ['defer']
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
 
-[plugins.rtx]
-inline = 'eval "$(rtx activate zsh)"'
-
 [plugins.rye]
 inline = 'eval ". $HOME/.rye/env"'
+
+[plugins.mise]
+inline = 'eval "$(mise activate zsh)"'
 
 [plugins.auto-cd]
 inline = 'setopt auto_cd'
