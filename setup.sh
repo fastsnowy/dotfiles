@@ -28,10 +28,10 @@ function install_starship {
     fi
 }
 
-function install_rtx {
+function install_mise {
     if ! command -v rtx >/dev/null 2>&1; then
-        cargo install rtx-cli
-        echo -e "\e[36mInstalled rtx-cli\e[m\n"
+        cargo install mise
+        echo -e "\e[36mInstalled mise\e[m\n"
     fi
 }
 
@@ -53,7 +53,7 @@ function installs {
     install_cargo
     install_sheldon
     install_starship
-    install_rtx
+    install_mise
     install_rye
     install_eza
 }
