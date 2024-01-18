@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+    paths:
+      - "setup.sh"
+      - ".config/zsh/**/*"
+      - ".config/sheldon/**/*"
+      - "!.config/starship/starship.toml"
+      - "!README.md"
 
 jobs:
   ubuntu:
