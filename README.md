@@ -6,11 +6,14 @@
 - zsh
 
 ## tools
-- cargo
-- mise (migrate from rtx-cli)
-- rye
-- starship
-- eza
+- main
+  - cargo
+  - mise (migrate from rtx-cli)
+  - starship
+  - eza
+- option
+  - Homebrew
+  - Rye
 
 ## Installation
 
