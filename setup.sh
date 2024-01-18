@@ -55,12 +55,12 @@ function installs {
     install_sheldon
     install_starship
     install_mise
-    install_rye
     install_eza
 }
 
 function extra_installs {
     install_brew
+    install_rye
 }
 
 # symlink
