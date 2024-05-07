@@ -4,12 +4,15 @@
 
 ## Requirements
 - zsh
+- openssl (`brew install openssl`)
+- nerd-fonts
 
 ## tools
 - main
   - cargo
-  - mise (migrate from rtx-cli)
+  - mise
   - starship
+  - sheldon
   - eza
 - option
   - Homebrew
@@ -18,9 +21,5 @@
 ## Installation
 
 ```bash
-bash setup.sh -i
+zsh setup.sh
 ```
-
-- `-i` Install & symlink dotfiles
-- `-s` Symlink dotfiles
-- `-e` Install extra packages (Homebrew)

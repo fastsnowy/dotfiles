@@ -52,10 +52,10 @@ function install_eza {
 
 function installs {
     install_cargo
-    install_sheldon
     install_starship
     install_mise
     install_eza
+    install_sheldon
 }
 
 function extra_installs {
@@ -99,21 +99,36 @@ function symbolic_links {
 }
 
 
-# コマンドライン引数を受け取るmain
 function main {
-    if [[ $1 == "-i" ]]; then
-        installs
-        symbolic_links
-    elif [[ $1 == "-s" ]]; then
-        symbolic_links
-    elif [[ $1 == "-e" ]]; then
-        extra_installs
-    elif [[ $1 == "-a" ]]; then
-        installs
-        symbolic_links
-    else
-        echo -e "\e[31mInvalid argument\e[m\n"
-    fi
+    echo "1) Install and create symbolic links（Recommended）"
+    echo "2) Create symbolic links"
+    echo "3) Install extras"
+    echo "4) Install"
+    echo "5) Exit"
+    echo "Please enter your choice: "
+    read choice
+
+    case $choice in
+        1)
+            installs
+            symbolic_links
+            ;;
+        2)
+            symbolic_links
+            ;;
+        3)
+            extra_installs
+            ;;
+        4)
+            installs
+            ;;
+        5)
+            exit 0
+            ;;
+        *)
+            echo -e "\e[31mInvalid choice\e[m"
+            ;;
+    esac
 }
 
-main $1
+main
