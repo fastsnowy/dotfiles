@@ -64,3 +64,6 @@ inline = 'setopt auto_cd'
 local = '~/.config/zsh'
 use = ['*.zsh']
 apply = ['defer']
+
+[plugins.zsh-zabrze]
+inline = 'eval "$(zabrze init --bind-keys)"'

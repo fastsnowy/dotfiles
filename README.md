@@ -8,18 +8,16 @@
 - nerd-fonts
 
 ## tools
-- main
-  - cargo
-  - mise
-  - starship
-  - sheldon
-  - eza
-- option
-  - Homebrew
-  - Rye
+- Homebrew
+- cargo
+- mise
+- starship
+- sheldon
+- eza
+- zabrze
 
 ## Installation
 
 ```bash
-zsh setup.sh
+sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply fastsnowy
 ```

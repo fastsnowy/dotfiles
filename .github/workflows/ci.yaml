@@ -1,39 +1,22 @@
-name: Setup-CI
+name: Check
 
 on:
   push:
     branches:
       - main
-    paths:
-      - "setup.sh"
-      - ".config/zsh/**/*"
-      - ".config/sheldon/**/*"
-      - "!.config/starship/starship.toml"
-      - "!README.md"
 
 jobs:
   ubuntu:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependencies
-        run: |
-          sudo apt-get install -y libssl-dev build-essential git
-      - name: Install zsh
-        run: |
-          sudo apt-get install -y zsh --no-install-recommends
       - name: test setup
-        run: zsh ./setup.sh -a
+        run: sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply -S .
   
   macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Homebrew
-        run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      - name: Install dependencies
-        run: |
-          brew install zsh
       - name: test setup
-        run: zsh ./setup.sh -a
+        run: |
+          sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply -S .
