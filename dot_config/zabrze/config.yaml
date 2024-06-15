@@ -4,25 +4,21 @@ abbrevs:
     abbr: g
     snippet: git
 
-  - name: awk '{print $1}'
-    abbr: '.1'
-    snippet: awk '{print $1}'
-  
   - name: cargo installed app update
-    abbr: 'cup'
+    abbr: "cup"
     snippet: cargo install-update -a
-  
+
   # eza
   - name: ls with icons and git
     abbr: ls
     snippet: eza --icons --git
     if: (( ${+commands[eza]} ))
-  
+
   - name: lt with icons and git and ignore node_modules|.git|.cache|.venv
     abbr: lt
     snippet: eza -T -L 3 -a -I "node_modules|.git|.cache|.venv"
     if: (( ${+commands[eza]} ))
-  
+
   - name: lt with icons and git and ignore node_modules|.git|.cache|.venv
     abbr: ltl
     snippet: eza -T -L 3 -a -I "node_modules|.git|.cache|.venv" -l --icons
