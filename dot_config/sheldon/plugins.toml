@@ -51,12 +51,6 @@ apply = ['defer']
 [plugins.starship]
 inline = 'eval "$(starship init zsh)"'
 
-[plugins.rye]
-inline = 'eval ". $HOME/.rye/env"'
-
-[plugins.mise]
-inline = 'eval "$(mise activate zsh)"'
-
 [plugins.auto-cd]
 inline = 'setopt auto_cd'
 
@@ -64,6 +58,3 @@ inline = 'setopt auto_cd'
 local = '~/.config/zsh'
 use = ['*.zsh']
 apply = ['defer']
-
-[plugins.zsh-zabrze]
-inline = 'eval "$(zabrze init --bind-keys)"'
