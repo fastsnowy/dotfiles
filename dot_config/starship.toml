@@ -30,6 +30,15 @@ symbol = " "
 
 [git_status]
 style = "#F875AA"
+format = '([$all_status$ahead_behind]($style) )'
+conflicted= '[= ](red)'
+ahead = '[⇡$ahead_count](red)'
+behind = '[⇣$behind_count](cyan)'
+modified = '[ ](yellow)'
+deleted = '[󱎘 ](red)'
+untracked = '[ ](red)'
+staged = '[󰸞 ](green)'
+stashed ='[󰉀 ](cyan)'
 
 [package]
 style = "#E1AEFF"
