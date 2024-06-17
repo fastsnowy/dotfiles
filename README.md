@@ -4,8 +4,13 @@
 
 ## Requirements
 - zsh
-- openssl (`brew install openssl`)
 - nerd-fonts
+
+## Installation
+
+```bash
+sh -c "$(curl -fsSL get.chezmoi.io)" -- init --apply fastsnowy
+```
 
 ## tools
 - Homebrew
@@ -15,9 +20,3 @@
 - sheldon
 - eza
 - zabrze
-
-## Installation
-
-```bash
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply fastsnowy
-```
