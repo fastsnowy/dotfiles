@@ -3,6 +3,11 @@
 
 add_newline = true
 
+[character]
+success_symbol = "[❯](purple bold)"
+error_symbol = "[❯](red bold)"
+vimcmd_symbol = "[❮](bold green)"
+
 [directory]
 truncation_length = 100
 truncate_to_repo = false
@@ -18,6 +23,12 @@ format = "via [󰡨 $context](blue bold)"
 [gcloud]
 disabled = true
 
+[aws]
+disabled = true
+
+[cmd_duration]
+disabled = true
+
 [username]
 style_user = "#A8D8EA bold"
 format = "[ $user]($style) in "
@@ -31,14 +42,14 @@ symbol = " "
 [git_status]
 style = "#F875AA"
 format = '([$all_status$ahead_behind]($style) )'
-conflicted= '[= ](red)'
-ahead = '[⇡$ahead_count](red)'
-behind = '[⇣$behind_count](cyan)'
-modified = '[ ](yellow)'
-deleted = '[󱎘 ](red)'
-untracked = '[ ](red)'
-staged = '[󰸞 ](green)'
-stashed ='[󰉀 ](cyan)'
+conflicted = '[= ](pink)'
+ahead = '[⇡$ahead_count](pink)'
+behind = '[⇣$behind_count](pink)'
+modified = '[ ](pink)'
+deleted = '[󱎘 ](pink)'
+untracked = '[ ](pink)'
+staged = '[󰸞 ](pink)'
+stashed = '[󰉀 ](pink)'
 
 [package]
 style = "#E1AEFF"
@@ -46,8 +57,12 @@ symbol = " "
 
 [nodejs]
 style = "#FFBDF7"
+symbol = "󰋙 "
 
 [python]
 style = "#FFBDF7"
 symbol = " "
 
+[bun]
+style = "#FFBDF7"
+symbol = "󱁣 "
