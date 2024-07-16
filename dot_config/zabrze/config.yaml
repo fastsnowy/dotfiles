@@ -1,9 +1,19 @@
 # ~/.config/zabrze/config.yaml
 abbrevs:
+  # global settings
+  - name: null command
+    abbr: "null"
+    snippet: "> /dev/null 2>&1"
+    global: true
+  
   # git
   - name: git
     abbr: g
     snippet: git
+  
+  - name: git push safe
+    abbr: gps
+    snippet: git push --force-with-lease --force-if-includes
   
   # github cli (gh)
   - name: gh auth switch
@@ -48,3 +58,24 @@ abbrevs:
   - name: pnpm dlx
     abbr: plx
     snippet: pnpm dlx
+
+  # docker
+  - name: docker run it
+    abbr: dcr
+    snippet: docker run -it
+
+  - name: docker compose
+    abbr: dc
+    snippet: docker compose
+  
+  - name: docker compose up
+    abbr: dcu
+    snippet: docker compose up
+  
+  - name: docker compose down
+    abbr: dcd
+    snippet: docker compose down
+
+  - name: docker compose logs
+    abbr: dcl
+    snippet: docker compose logs
