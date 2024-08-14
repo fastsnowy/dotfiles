@@ -5,21 +5,21 @@ abbrevs:
     abbr: "null"
     snippet: "> /dev/null 2>&1"
     global: true
-  
+
   # git
   - name: git
     abbr: g
     snippet: git
-  
+
   - name: git push safe
     abbr: gps
     snippet: git push --force-with-lease --force-if-includes
-  
+
   # github cli (gh)
   - name: gh auth switch
     abbr: ghs
     snippet: gh auth switch
-  
+
   - name: gh auth setup-git
     abbr: ghags
     snippet: gh auth setup-git
@@ -67,11 +67,11 @@ abbrevs:
   - name: docker compose
     abbr: dc
     snippet: docker compose
-  
+
   - name: docker compose up
     abbr: dcu
     snippet: docker compose up
-  
+
   - name: docker compose down
     abbr: dcd
     snippet: docker compose down
@@ -79,3 +79,29 @@ abbrevs:
   - name: docker compose logs
     abbr: dcl
     snippet: docker compose logs
+
+  # terraform
+  - name: terraform
+    abbr: tf
+    snippet: terraform
+
+  - name: terraform init
+    abbr: tfi
+    snippet: terraform init
+
+  - name: terraform plan
+    abbr: tfp
+    snippet: terraform plan
+
+  - name: terraform apply
+    abbr: tfa
+    snippet: terraform apply
+
+  # venv (python)
+  - name: venv activate
+    abbr: va
+    snippet: source .venv/bin/activate
+
+  - name: venv deactivate
+    abbr: vd
+    snippet: deactivate
