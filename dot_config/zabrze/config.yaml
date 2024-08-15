@@ -15,6 +15,20 @@ abbrevs:
     abbr: gps
     snippet: git push --force-with-lease --force-if-includes
 
+
+  - name: git current branch
+    abbr: b
+    snippet: $(git symbolic-ref --short HEAD)
+    evaluate: true
+    global: true
+    context: '^git\s'
+  
+  - name: remote branch
+    abbr: o
+    snippet: origin
+    global: true
+    context: '^git\s'
+
   # github cli (gh)
   - name: gh auth switch
     abbr: ghs
@@ -29,7 +43,7 @@ abbrevs:
     snippet: gh pr create
 
   - name: cargo installed app update
-    abbr: "cup"
+    abbr: cup
     snippet: cargo install-update -a
 
   # eza
@@ -71,6 +85,7 @@ abbrevs:
   - name: docker compose up
     abbr: dcu
     snippet: docker compose up
+
 
   - name: docker compose down
     abbr: dcd
