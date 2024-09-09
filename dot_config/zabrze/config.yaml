@@ -120,3 +120,8 @@ abbrevs:
   - name: venv deactivate
     abbr: vd
     snippet: deactivate
+
+  # vscode
+  - name: code
+    abbr: c
+    snippet: code .
