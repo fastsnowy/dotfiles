@@ -34,7 +34,7 @@ github = 'marlonrichert/zsh-autocomplete'
 apply = ['source']
 
 [plugins.compinit]
-inline = 'autoload -Uz compinit && zsh-defer compinit'
+inline = 'autoload -Uz compinit && compinit'
 
 [plugins.zsh-autosuggestions]
 github = 'zsh-users/zsh-autosuggestions'
