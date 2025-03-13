@@ -56,7 +56,7 @@ inline = 'setopt auto_cd'
 
 [plugins.defer-zsh]
 local = '~/.config/zsh'
-use = ['{!sync,*}.zsh']
+use = ['defer/**/*.zsh']
 apply = ['defer']
 
 [plugins.local-zsh]
