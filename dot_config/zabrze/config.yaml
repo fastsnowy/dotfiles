@@ -42,6 +42,10 @@ abbrevs:
     abbr: ghprc
     snippet: gh pr create
 
+  - name: gh pr view and checkout fuzzy
+    abbr: gfs
+    snippet: github-fuzzy-switch
+
   - name: cargo installed app update
     abbr: cup
     snippet: cargo install-update -a

@@ -18,7 +18,7 @@ style = "#7071E8 bold"
 disabled = true
 
 [docker_context]
-format = "via [󰡨 $context](blue bold)"
+format = "via [󰡨 $context](blue bold) "
 
 [gcloud]
 disabled = true
@@ -41,7 +41,7 @@ symbol = " "
 
 [git_status]
 style = "#F875AA"
-format = '([$all_status$ahead_behind]($style) )'
+format = '([$all_status$ahead_behind]($style))'
 conflicted = '[= ](pink)'
 ahead = '[⇡$ahead_count](pink)'
 behind = '[⇣$behind_count](pink)'
