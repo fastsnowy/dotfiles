@@ -21,7 +21,9 @@ disabled = true
 format = "via [󰡨 $context](blue bold) "
 
 [gcloud]
-disabled = true
+disabled = false
+symbol = '️󱇶 '
+format = "on $symbol[$project]($style) "
 
 [aws]
 disabled = true
