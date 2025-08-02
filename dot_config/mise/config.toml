@@ -1,0 +1,40 @@
+[tools]
+node = "22"
+pnpm = "latest"
+deno = "latest"
+chezmoi = "latest"
+starship = "latest"
+terraform = "latest"
+awscli = "latest"
+gcloud = "latest"
+ghq = "latest"
+poetry = "latest"
+uv = "latest"
+watchexec = "latest"
+"cargo:eza" = "latest"
+"cargo:bat" = "latest"
+"cargo:broot" = "latest"
+"npm:@biomejs/biome" = "latest"
+"ubi:rhysd/actionlint" = "latest"
+"npm:@dataform/cli" = "latest"
+pipx = "latest"
+yazi = "latest"
+kubectl = "latest"
+azure-cli = "latest"
+python = "3.12"
+bun = "latest"
+"npm:@google/gemini-cli" = "latest"
+go = "latest"
+"npm:@mermaid-js/mermaid-cli" = "latest"
+stripe = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
+terraform-docs = "latest"
+glow = "latest"
+
+[settings]
+legacy_version_file_disable_tools = ["terraform", "packer"]
+experimental = true
+idiomatic_version_file_enable_tools = ["python"]
+
+[settings.npm]
+bun = true
