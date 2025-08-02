@@ -11,10 +11,9 @@ abbrevs:
     abbr: g
     snippet: git
 
-  - name: git push safe
-    abbr: gps
+  - name: git safe push
+    abbr: gsp
     snippet: git push --force-with-lease --force-if-includes
-
 
   - name: git current branch
     abbr: b
@@ -22,10 +21,30 @@ abbrevs:
     evaluate: true
     global: true
     context: '^git\s'
-  
+
   - name: remote branch
     abbr: o
     snippet: origin
+    global: true
+    context: '^git\s'
+
+  - name: git pull
+    abbr: gpl
+    snippet: git pull
+  
+  - name: git pull(alias)
+    abbr: p
+    snippet: pull
+    global: true
+    context: '^git\s'
+  
+  - name: swich main branch
+    abbr: gsm
+    snippet: git switch main
+  
+  - name: swich main branch(alias)
+    abbr: sm
+    snippet: switch main
     global: true
     context: '^git\s'
 
@@ -72,6 +91,11 @@ abbrevs:
     snippet: chezmoi
     if: (( ${+commands[chezmoi]} ))
 
+  - name: chezmoi update
+    abbr: czu
+    snippet: chezmoi update
+    if: (( ${+commands[chezmoi]} ))
+
   # pnpm
   - name: pnpm dlx
     abbr: plx
@@ -89,7 +113,6 @@ abbrevs:
   - name: docker compose up
     abbr: dcu
     snippet: docker compose up
-
 
   - name: docker compose down
     abbr: dcd
@@ -129,3 +152,27 @@ abbrevs:
   - name: code
     abbr: c
     snippet: code .
+    if: (( ! ${+commands[cursor]} ))
+  
+  # Cursor
+  - name: cursor
+    abbr: c
+    snippet: cursor .
+    if: (( ${+commands[cursor]} ))
+
+  # mise
+  - name: mise
+    abbr: m
+    snippet: mise
+
+  - name: mise run
+    abbr: mr
+    snippet: mise run
+  
+  - name: gal
+    abbr: g
+    snippet: gal
+    evaluate: true
+    global: true
+    # mise run
+    context: '^mise\s'
