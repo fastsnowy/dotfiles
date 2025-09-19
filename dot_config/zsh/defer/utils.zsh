@@ -25,11 +25,17 @@ function ghq-fzf() {
     if [ -n "$selected" ]; then
         cd "$(ghq root)/$selected"
     fi
+    zle clear-screen
+}
+
+function _zi() {
+    zi
+    zle clear-screen
 }
 
 zle -N ghq-fzf
 bindkey '^g' ghq-fzf
 
 # bind key
-zle -N zi
-bindkey '^z' zi
+zle -N _zi
+bindkey '^z' _zi
