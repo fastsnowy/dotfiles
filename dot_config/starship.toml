@@ -3,6 +3,8 @@
 
 add_newline = true
 
+format = "$all$custom_git_username"
+
 [character]
 success_symbol = "[❯](purple bold)"
 error_symbol = "[❯](red bold)"
@@ -68,3 +70,10 @@ symbol = " "
 [bun]
 style = "#FFBDF7"
 symbol = "󱁣 "
+
+[custom.git_username]
+description = "<custom config for git username>"
+command = "git config user.name"
+when = "git rev-parse --is-inside-work-tree >/dev/null 2>&1"
+format = "[󰀄$output]($style)"
+style = "#F875AA"
