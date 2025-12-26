@@ -176,3 +176,8 @@ abbrevs:
     global: true
     # mise run
     context: '^mise\s'
+
+  # uv
+  - name: uv run
+    abbr: ur
+    snippet: uv run
