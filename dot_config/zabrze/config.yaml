@@ -65,6 +65,14 @@ abbrevs:
     abbr: gfs
     snippet: github-fuzzy-switch
 
+  - name: open github repository in browser
+    abbr: gb
+    snippet: gh browse
+
+  - name: open github pr in browser
+    abbr: gpb
+    snippet: gh pr view --web
+
   - name: cargo installed app update
     abbr: cup
     snippet: cargo install-update -a
