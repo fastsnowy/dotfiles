@@ -62,8 +62,8 @@ abbrevs:
     snippet: gh pr create
 
   - name: gh pr view and checkout fuzzy
-    abbr: gfs
-    snippet: github-fuzzy-switch
+    abbr: gps
+    snippet: gps
 
   - name: open github repository in browser
     abbr: gb
