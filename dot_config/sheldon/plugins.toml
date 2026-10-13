@@ -49,7 +49,7 @@ github = 'zdharma-continuum/fast-syntax-highlighting'
 apply = ['defer']
 
 [plugins.starship]
-inline = 'eval "$(starship init zsh)"'
+inline = 'if command -v starship >/dev/null 2>&1; then eval "$(starship init zsh)"; fi'
 
 [plugins.auto-cd]
 inline = 'setopt auto_cd'
