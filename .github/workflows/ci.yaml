@@ -40,6 +40,9 @@ jobs:
           curl -fsSL https://get.chezmoi.io -o "$RUNNER_TEMP/install-chezmoi.sh"
           sh "$RUNNER_TEMP/install-chezmoi.sh" -b "$RUNNER_TEMP/bin" -t "$CHEZMOI_VERSION"
           echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
+      - name: Validate Brewfile syntax
+        if: runner.os == 'macOS'
+        run: ruby -c dot_Brewfile
       - name: Validate templates, startup, and isolated apply
         run: python3 tests/validate.py
 

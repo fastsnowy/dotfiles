@@ -55,6 +55,7 @@ class DotfilesTests(unittest.TestCase):
         for name in ('README.md', 'tests/validate.py', '.github/workflows/ci.yaml'):
             self.assertNotIn(name, managed)
         self.assertIn('.config/mise/config.toml', managed)
+        self.assertIn('.Brewfile', managed)
         self.assertIn('.agents/skills/yomiyasu/.claude-plugin/plugin.json', managed)
         self.assertIn('.agents/skills/yomiyasu/scripts/yomiyasu_lint.py', managed)
         run(self.chezmoi + ['apply', '--exclude=scripts'])

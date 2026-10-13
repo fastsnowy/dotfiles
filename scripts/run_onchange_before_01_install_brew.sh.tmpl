@@ -3,6 +3,7 @@
 set -euo pipefail
 
 {{ if eq .chezmoi.os "darwin" -}}
+# Brewfile: {{ include "dot_Brewfile" | sha256sum }}
 # Homebrew may already be installed but not yet available in this shell.
 for brew_path in /opt/homebrew/bin/brew /usr/local/bin/brew; do
     if [[ -x "$brew_path" ]]; then
@@ -20,7 +21,7 @@ if ! command -v brew >/dev/null 2>&1; then
         fi
     done
 fi
-brew install openssl fzf
+brew bundle install --file {{ joinPath .chezmoi.sourceDir "dot_Brewfile" | quote }} --no-upgrade
 {{ else -}}
 # The Linux bootstrap supports Debian/Ubuntu (apt).
 if ! command -v apt-get >/dev/null 2>&1; then
