@@ -38,7 +38,7 @@ jobs:
             sudo apt-get install -y zsh
           fi
           curl -fsSL https://get.chezmoi.io -o "$RUNNER_TEMP/install-chezmoi.sh"
-          sh "$RUNNER_TEMP/install-chezmoi.sh" -b "$RUNNER_TEMP/bin" "$CHEZMOI_VERSION"
+          sh "$RUNNER_TEMP/install-chezmoi.sh" -b "$RUNNER_TEMP/bin" -t "$CHEZMOI_VERSION"
           echo "$RUNNER_TEMP/bin" >> "$GITHUB_PATH"
       - name: Validate templates, startup, and isolated apply
         run: python3 tests/validate.py
@@ -54,4 +54,5 @@ jobs:
       - name: Install actionlint
         run: go install github.com/rhysd/actionlint/cmd/actionlint@v1.7.12
       - name: Check workflows
-        run: "$(go env GOPATH)/bin/actionlint"
+        run: |
+          "$(go env GOPATH)/bin/actionlint"
