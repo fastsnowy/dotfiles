@@ -1,0 +1,34 @@
+{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") -}}
+#!/bin/bash
+set -euo pipefail
+
+{{ if eq .chezmoi.os "darwin" -}}
+# Brewfile: {{ include "dot_Brewfile" | sha256sum }}
+# Homebrew may already be installed but not yet available in this shell.
+for brew_path in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+    if [[ -x "$brew_path" ]]; then
+        eval "$("$brew_path" shellenv)"
+        break
+    fi
+done
+if ! command -v brew >/dev/null 2>&1; then
+    installer=$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
+    NONINTERACTIVE=1 /bin/bash -c "$installer"
+    for brew_path in /opt/homebrew/bin/brew /usr/local/bin/brew; do
+        if [[ -x "$brew_path" ]]; then
+            eval "$("$brew_path" shellenv)"
+            break
+        fi
+    done
+fi
+brew bundle install --file {{ joinPath .chezmoi.sourceDir "dot_Brewfile" | quote }} --no-upgrade
+{{ else -}}
+# The Linux bootstrap supports Debian/Ubuntu (apt).
+if ! command -v apt-get >/dev/null 2>&1; then
+    echo "Automatic bootstrap requires Debian/Ubuntu; install dependencies manually." >&2
+    exit 1
+fi
+sudo apt-get update
+sudo apt-get install -y build-essential libssl-dev libreadline-dev zlib1g-dev cmake pkg-config fzf zsh
+{{ end -}}
+{{ end -}}

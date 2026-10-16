@@ -1,5 +1,8 @@
-# cargo
-source "$HOME/.cargo/env"
+# Cargo is optional before the first chezmoi apply.
+if [[ -f "$HOME/.cargo/env" ]]; then
+    source "$HOME/.cargo/env"
+fi
 
-# local bin
-export PATH="$HOME/.local/bin:$PATH"
+# Also available to interactive shells that are not login shells.
+typeset -U path PATH
+path=("$HOME/.local/bin" "$HOME/.cargo/bin" $path)

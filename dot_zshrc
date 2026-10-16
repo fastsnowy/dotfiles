@@ -1,1 +1,1 @@
-eval "$(sheldon source)"
+source "$HOME/.config/zsh/init.zsh"
