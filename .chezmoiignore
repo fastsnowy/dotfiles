@@ -1,0 +1,4 @@
+# Repository-only files must not be copied into the home directory.
+README.md
+tests
+tests/**

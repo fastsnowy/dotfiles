@@ -1,5 +1,13 @@
+{{ if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "linux") -}}
 #!/bin/bash
+set -euo pipefail
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env
-cargo install sheldon mise eza zabrze
+if [[ -f "$HOME/.cargo/env" ]]; then
+    source "$HOME/.cargo/env"
+fi
+if ! command -v cargo >/dev/null 2>&1; then
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal --no-modify-path
+    source "$HOME/.cargo/env"
+fi
+cargo install --locked sheldon mise eza zabrze
+{{ end -}}
